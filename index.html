@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amount Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #amount-display {
+            font-size: 24px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #amount-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="amount-display">Amount: ₹0</div>
+    <button id="amount-button" onclick="displayAmount()">Click me</button>
+
+    <script>
+        let amount = 0;
+
+        function displayAmount() {
+            amount = 20000;
+            let amountDisplay = document.getElementById('amount-display');
+            amountDisplay.innerText = 'Amount: ₹' + amount;
+            amountDisplay.style.opacity = 1;
+
+            // Reset opacity after a short delay for the next animation
+            setTimeout(() => {
+                amountDisplay.style.opacity = 0;
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>
